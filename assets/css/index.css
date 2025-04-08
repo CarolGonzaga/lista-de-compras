@@ -90,6 +90,9 @@ ul {
     flex-direction: column;
     gap: 0.75rem;
 
+    overflow-y: auto;
+    max-height: 17rem;
+
     & li {
         display: flex;
         align-items: center;
@@ -98,6 +101,12 @@ ul {
         padding: 0.75rem;
         background-color: var(--background-secondary);
         border-radius: 0.75rem;
+
+        & button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
     }
 }
 
@@ -105,8 +114,6 @@ ul {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font: var(--paragraph);
-    color: var(--content-secondary);
 }
 
 .checkbox-wrapper input[type="checkbox"] {
@@ -127,6 +134,11 @@ ul {
     transition: all 0.2s ease;
 }
 
+.custom-checkbox .task-text {
+    font: var(--paragraph);
+    color: var(--content-secondary);
+}
+
 .checkbox-wrapper:hover input:not(:checked)+.custom-checkbox {
     border-color: var(--border-hover);
 }
@@ -134,6 +146,11 @@ ul {
 .checkbox-wrapper input:checked+.custom-checkbox {
     background-color: var(--color-brand);
     border-color: var(--color-brand);
+}
+
+.checkbox-wrapper input:checked+.custom-checkbox+.task-text {
+    text-decoration: line-through;
+    color: var(--content-tertiary);
 }
 
 .custom-checkbox::after {
@@ -179,6 +196,42 @@ section {
     }
 }
 
+#alert-container {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Quando for exibido */
+#alert-container.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+#cancel-btn {
+    cursor: pointer;
+}
+
+@media (width <= 375px) {
+    header {
+        margin-block: 2rem;
+    }
+
+    form {
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        max-height: 6.5rem;
+    }
+
+    section {
+        margin-top: 1rem;
+    }
+}
+
 @media (width >=501px) {
     main {
         max-width: 43rem;
@@ -186,11 +239,11 @@ section {
 
     form {
         flex-direction: row;
-    
+
         & input {
             flex: 1;
         }
-    
+
         & button {
             width: 10rem;
             padding: .75rem 1.5rem;

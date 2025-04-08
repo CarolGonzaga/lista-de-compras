@@ -20,6 +20,7 @@
 <body>
     <main>
         <img src="assets/images/logo.svg" alt="" class="desktop-only">
+        
         <header>
             <a href="#" class="back">
                 <img src="assets/images/arrow.svg" alt="Ícone de voltar">
@@ -29,53 +30,60 @@
         </header>
         
         <form>
-            <input type="text" placeholder="Adicione um novo item">
+            <input type="text" placeholder="Adicione um novo item" id="input-task" required>
             <button type="submit">Adicionar item</button>
         </form>
         
-        <ul role="list">
+        <ul role="list" id="task-list">
             <li>
                 <label class="checkbox-wrapper">
                     <input type="checkbox" name="" id="">
                     <span class="custom-checkbox"></span>
-                    Pão de Forma
+                    <span class="task-text">Pão de forma</span>
                 </label>
-                <img src="assets/images/bin.svg" alt="">
+                <button class="btn-bin"><img src="assets/images/bin.svg" alt=""></button>
             </li>
+            
             <li>
                 <label class="checkbox-wrapper">
                     <input type="checkbox" name="" id="">
                     <span class="custom-checkbox"></span>
-                    Café preto
+                    <span class="task-text">Café preto</span>
                 </label>
-                <img src="assets/images/bin.svg" alt="">
+                <button class="btn-bin"><img src="assets/images/bin.svg" alt=""></button>
             </li>
+            
             <li>
                 <label class="checkbox-wrapper">
                     <input type="checkbox" name="" id="">
                     <span class="custom-checkbox"></span>
-                    Suco de laranja
+                    <span class="task-text">Suco de laranja</span>                    
                 </label>
-                <img src="assets/images/bin.svg" alt="">
+                <button class="btn-bin"><img src="assets/images/bin.svg" alt=""></button>
             </li>
+            
             <li>
                 <label class="checkbox-wrapper">
                     <input type="checkbox" name="" id="">
                     <span class="custom-checkbox"></span>
-                    Bolacha
+                    <span class="task-text">Bolacha</span> 
                 </label>
-                <img src="assets/images/bin.svg" alt="">
+                <button class="btn-bin"><img src="assets/images/bin.svg" alt=""></button>
             </li>
         </ul>
 
-        <section>
+        <section id="alert-container">
             <div>
                 <img src="assets/images/alert.svg" alt="">
                 <span>O item foi removido da lista</span>
             </div>
+            
             <img src="assets/images/cancel.svg" alt="" id="cancel-btn">
         </section>
+
     </main>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
