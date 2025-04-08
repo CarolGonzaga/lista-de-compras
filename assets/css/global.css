@@ -9,9 +9,9 @@
     --font-family: 'Inter', sans-serif;
 
     --title: 700 24px/133% var(--font-family);
-    --label: 600 16px/125% var(--font-family);
+    --label: 500 16px/125% var(--font-family);
     --paragraph: 500 16px/125% var(--font-family);
-    --link: 500 14px/114% var(--font-family);
+    --link: 400 14px/114% var(--font-family);
 
     /* === Background === */
     --background-primary: #F4F5FB;
@@ -46,4 +46,13 @@ body {
     justify-content: center;
     text-align: left;
     background-color: var(--background-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }
