@@ -56,3 +56,13 @@ a {
 ul {
     list-style: none;
 }
+
+.desktop-only {
+    display: none;
+}
+
+@media (width >= 501px) {
+    .desktop-only {
+        display: block;
+    }
+}
